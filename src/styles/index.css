@@ -1,8 +1,11 @@
-.headerPage{
+.headerPage {
     height: 100px;
     width: 100%;
+    position: fixed;
     background-color: var(--gray-1);
-}
+    z-index: 10; 
+    transition: background-color 0.3s ease; 
+  }
 
 .headerContainer{
     height: 100px;
@@ -70,6 +73,11 @@
     color: var(--gray-7);
 }
 
+.bannerButton:hover{
+    background-color: var(--brand-2);
+    border: 1px solid var(--brand-2);
+}
+
 .infoSection{
     width: 100%;
     height: 284px;
@@ -119,13 +127,16 @@
 }
 
 .faqContainerLeftSide{
+    height: 57rem;
     padding: 0px 87px 0px 0px;
     width: 620px;
 }
 
 
 .faqDivLeft{
-    height: 100%;
+    position: sticky;
+    top: 160px;
+    height: 18rem;
     width: 533px;
 }
 
@@ -156,6 +167,11 @@
     padding: 20px 32px 20px 32px;
 }
 
+.faqButton:hover{
+    background-color: var(--brand-2);
+    border: 1px solid var(--brand-2);
+}
+
 .faqListRightSide{
     width: 583px;
 }
@@ -184,7 +200,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 1387px;
+    height: 1450px;
     background-color: var(--gray-2);
 }
 
@@ -198,6 +214,8 @@
 
 .rightSideContainer{
     display: flex;
+    position: sticky;
+    top: 160px;
     align-items: center;
     background-color: var(--brand-1);
     justify-content: center;
@@ -278,7 +296,105 @@
     width: 100%;
 }
 
+.modal {
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
 
+  .modalContent {
+    display: flex;
+    height: 416px;
+    width: 504px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-2);
+    border: 2px solid var(--brand-1);
+    position: absolute; 
+    top: 50%;         
+    left: 50%;        
+    transform: translate(-50%, -50%); 
+  }
+
+.modalContainer{
+    height: 80%;
+    width: 80%;
+}
+
+.headerModal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 51px;
+    width: 100%;
+}
+
+.headerModalTitle{
+    color: var(--gray-7);
+    font-size: var(--title3-font-size);
+    font-weight: var(--title3-font-weight);
+    line-height: var(--title3-line-height);
+}
+
+.modalBody{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.modalBodyParagrafo{
+    padding-top: 2.5rem;
+    color: var(--gray-4);
+    font-weight: var(--text3-font-weight);
+    font-size: var(--text3-font-size);
+    line-height: var(--text3-line-height);
+}
+
+.modalTextArea{
+    background-color: var(--gray-1);
+    border: 1px solid var(--gray-1);
+    height: 20px;
+    padding: 14px 20px 14px 20px;
+    color: var(--gray-4);
+    font-weight: var(--text1-font-weight);
+    font-size: var(--text1-font-size);
+    line-height: var(--text1-line-height);
+}
+
+.modalBodyButton{
+    background-color: var(--brand-1);
+    border: 1px solid var(--brand-1);
+    height: 40px;
+    padding: 0px 32px 0px 32px;
+    color: var(--gray-7);
+    font-weight: var(--text4-font-weight);
+    font-size: var(--text4-font-size);
+    line-height: var(--text4-line-height);
+}
+
+.modal.active .headerPage {
+    background-color: transparent !important; 
+  }
+  
+
+  .modalCloseButton {
+    background-image: url('../assets/close.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 38px;
+    height: 32px;
+    border: 1px solid var(--gray-3);
+    border-radius: 4px;
+    background-color: var(--gray-3);
+    cursor: pointer;
+  }
 
 
 
